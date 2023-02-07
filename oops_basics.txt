@@ -1,0 +1,73 @@
+Object Oriented Programming - basics
+
+Object - Realtime entity. instance of a class used to refer a variabel or call a function from a instanciated class.
+          Can be initialised by 3 methods:
+          - Using new keyword or default constructor  --->             A a  = new A()
+          - Using Class.forName() method              --->             A a  = (A)Class.forName("A").newInstance();
+          - Using clone method                        --->             A a1 = a.clone()
+          
+Class - Logical entity. group of objects which have common properties. It's kind of template/blueprint.
+        class can contain following entities:
+          - Fields --> Variable of specific datatype (int, char, String, boolean etc..,)
+          - Methods --> Function with access specifiers, return type and positional arguments associated with the datatypes
+          - Constructors --> function with the class name with no return 
+          - Blocks --> 
+          - Nested class and interface --> class inside class
+          
+Inheritance - method to create a hierarchy between classes by inheriting from other classes (Parent-Child relationship)
+            public class A{
+              public fn1(){
+                //does some task
+              }
+            }
+            public class B extends A{
+              public fn2(){
+                A.fn1();
+                //does some extra task
+              }
+            }
+
+          - 4 types of inheritance 
+              1. Single inheritance
+              2. Multi-level inheritance
+              3. Heirarchial inheritance
+              4. Multiple inheritance
+              
+          1. Single inheritance
+                class A{
+                
+                }
+                class B extends A{
+                
+                }
+          2. Multi-level inheritance
+                class A{
+                
+                }
+                class B extends A{
+                
+                }
+                class C extends B{
+                
+                }
+                
+           3. Heirarchial Inheritance
+                class A{
+                
+                }
+                class B extends A{
+                
+                }
+                class C extends A{
+                
+                }
+           4. Multiple inheritance 
+                interface A{
+                
+                }
+                interface B{
+                
+                }
+                class C implements A,B{
+                
+                }
