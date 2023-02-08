@@ -1,0 +1,35 @@
+Exception handling - process of handling exception in Java
+                   - Checked Exception - compile time - need to inherit Throwable class 
+                   - Unchecked Exception - runtime - need to inherit RuntimeException class 
+                   - Error - unrecoverable
+
+5 key words:
+  - try
+  - catch
+  - finally
+  - throw
+  - throws
+
+                   
+
+![hierarchy-of-exception-handling](https://user-images.githubusercontent.com/109742651/217568026-8e5b7ac8-3aba-4303-a785-149ea524c863.png)
+
+Exception Heirarchy:
+
+1. Throwable
+   1.1. Error
+        1.1.1. StackOverflowError
+        1.1.2. VirtualMachineError
+        1.1.3. OutOfMemoryError
+        1.1.4. AssertionError
+   1.2. Exception
+        1.2.1. IOException
+        1.2.2. SQLException
+        1.2.3. ClassNotFoundException
+        1.2.4. RuntimeException
+               1.2.4.1. ArithmeticException
+               1.2.4.2. NullPinterException
+               1.2.4.3. NumberFormatException
+               3.2.4.4. IndexOutOfBoundException
+                        1.2.4.4.1. ArrayIndexOutOfBoundException
+                        1.2.4.4.2. StringIndexOutOfBoundException
