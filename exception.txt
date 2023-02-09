@@ -10,6 +10,21 @@ Exception handling - process of handling exception in Java
   - throw
   - throws
 
+public class A{
+
+  try{
+    int a=10;
+    int b=0;
+    int c=a/b;
+  }
+  catch(ArithmeticException e){
+    //handle exception
+  }
+  finally{
+    
+  }
+
+}
                    
 
 ![hierarchy-of-exception-handling](https://user-images.githubusercontent.com/109742651/217568026-8e5b7ac8-3aba-4303-a785-149ea524c863.png)
