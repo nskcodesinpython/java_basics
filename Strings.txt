@@ -1,0 +1,31 @@
+String - is a class which stores the series of characters in an array format - immutable
+    s="hello"
+    s.concat("world")
+    S.O.Pln(s); //prints hello not 'hello world'  
+java.lang.String class implements Serializable, Comparable and CharSequence interfaces.
+
+
+CharSequence interface is used to represent the sequence of characters. String, StringBuilder, StringBuffer used to create character arrays in Java.
+
+Two ways of creating Strings:
+
+1. String literals
+2. new keyword
+
+String s = "hello";
+String s = new String("hello");
+
+methods:
+
+1. charAt(index) - gets the character at the specified index - index starts from 0
+2. length() - get length of the string
+3. format(String format, Object... args) - formats the string 
+    String sf1=String.format("name is %s",name);  
+4. substring(int beginIndex) - return susstring from begining index
+5. boolean contains(CharSequence s) - returns True or false if the value contains 
+6. String join(delemiter,string) - return joint string
+        String joinString1=String.join("-","welcome","to","javatpoint");
+7. concat(String s) - joins the new string with the old string and returns the string value
+8. String[] split(String regex) - splits the string based on regex and returns the string array
+9. valueOf(any datatype) - method overloaded - returns string value of anything that is passed
+10. indexOf - returns the starting index of a character or a substring
