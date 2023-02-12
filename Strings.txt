@@ -29,3 +29,22 @@ methods:
 8. String[] split(String regex) - splits the string based on regex and returns the string array
 9. valueOf(any datatype) - method overloaded - returns string value of anything that is passed
 10. indexOf - returns the starting index of a character or a substring
+
+StringComparison:
+    -By Using equals() Method
+        s1.equals(s2)
+        s1.equalsIgnoreCase(s2)
+    -By Using == Operator
+        s1==s2
+    -By compareTo() Method
+        s1.compareTo(s3)
+        
+String concatination:
+    -Using + operator
+        s1=s1+s2
+    -Using concat method
+        s1.concat(s2)
+    -Using format method
+        String.format("%s%s",s1,s2)
+    -Using join method
+        String.join("",s1,s2)
