@@ -1,0 +1,42 @@
+List - List in Java provides the facility to maintain the ordered collection.
+     - Extends Collection interace
+
+Methods:
+  1.  add(int index, E element)             - add element on specific index
+  2.  add(E e)                              - add element to the end of the list
+  3.  clear()                               - remove all the elements in the list
+  4.  equals(Object o)                      - compare the specified object with the elements of a list
+  5.  hashcode()                            - returns hashcode value of the list
+  6.  get(int index)                        - returns the element from the list
+  7.  isEmpty()                             - check if the list is empty
+  8.  lastIndexOf(Object o)                 - returns last index of the object requested
+  9.  toArray()                             - returns object of the array
+  10. contains(Object o)                    - list contains the specified element
+  11. remove(int index) - remove(Object o)  - removes element rom the specified index/ first occurance in the case of the later
+  12. removeAll(Collection<?> c)            - remove all elements present in the passed collection
+  13. set(int index, E element)             - replaces the element in the specific index
+  14. subList(int fromIndex, int toIndex)   - gets the sublist from starting index to last index
+  15. size()                                - gets the size of the list
+
+Collections.sort(list1);
+
+ListIterator - interface to traverse the element in a backward and forward direction.
+
+Method:
+  1. add(E e)         - adds specific element into the list
+  2. hasNext()        - method returns true if the list iterator has more elements while traversing the list in the forward direction
+  3. next()           - returns the next element in the list and advances the cursor position
+  4. nextIndex()      - returns the index of the element that would be returned by a subsequent call to next()
+  5. hasPrevious()    - returns true if this list iterator has more elements while traversing the list in the reverse direction
+  6. previous()       - returns the previous element in the list and moves the cursor position backward
+  7. remove()         - removes last element from the list
+  8. set(E e)         - replaces the last element returned by next() or previous() methods with the specified element
+  
+  List<String> al=new ArrayList<String>();
+  ListIterator<String> itr=al.listIterator();
+  
+  HashSet:
+        - Create a collection that uses a hash table for storage 
+        - It inherits the AbstractSet class and implements Set interface
+        - 
+  
