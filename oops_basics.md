@@ -141,7 +141,7 @@ Encapsulation - Encapsulation in Java is a mechanism of wrapping the data (varia
               }
               
               
-Abstraction - concept of creating a class with method definition and implementing the method deinition in the child class
+Abstraction - concept of creating a class with method definition and implementing the method definition in the child class
 
             public abstract class A{
                
