@@ -121,6 +121,8 @@ JSTL - JSP Standard Tag Library --> Expression Language
 
 ModelAndView - setViewName()
              - addObject("key",value)
+             
+ JPA - Java Persistance API
 
 Annotations:
 
