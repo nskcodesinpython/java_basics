@@ -27,7 +27,13 @@ Design patterns:
   MVC - Model View Controller
     Model - Retreiving and storing data, Mainitaining state, notification of observers of change in state
     View - UI, renders ListBox controls, acilitates selection
-    Container - responsinle for responding to user inputs, handles ListBox selection event, sends information to model
+    Controller - responsinle for responding to user inputs, handles ListBox selection event, sends information to model
+  Seperation of concerns
+  
+  client --> web.xml --> dispatcher servlet/ front controller (Handler Mapping) @Controller --> Servlet 
+  ---> service/Model/DAO model --> DB --> Model object --> View Resolver (spring-config.xml) ---> View
+  --> Servlet --> Jasper --> Client
+  
   API - Application Programming Interface 
   REST API - State of an object (XML/JSON)- REpresentational State Transfer
            - CRUP operation
@@ -99,3 +105,30 @@ class A{
 class B{
   //variables and methods
 }
+
+
+Servlet - Server Component
+        - Static request
+        - Dynamic request
+web.xml - Deployment Descriptor
+        - WEB.INF
+        
+application properties
+       - spring.mvc.view.prefix = /pathname/
+       - spring.mvc.view.suffix = .jsp
+
+JSTL - JSP Standard Tag Library --> Expression Language
+
+ModelAndView - setViewName()
+             - addObject("key",value)
+
+Annotations:
+
+@SpringBootApplication
+@AutoWired
+@RequestMapping
+@ResponseBody
+@RequestParam
+@Controller
+@Component
+@value
