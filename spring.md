@@ -124,6 +124,8 @@ ModelAndView - setViewName()
              
  JPA - Java Persistance API
 
+CRUDRepository class
+
 Annotations:
 
 @SpringBootApplication
