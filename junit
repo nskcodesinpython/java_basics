@@ -1,0 +1,29 @@
+Junit - Testing framework for Java
+      - every change all the test cases should be re-executed.
+
+Unit testing - testing small chunks of the code
+             - early identification of the defects
+             - tend to spend more time on reading the code
+
+Manual Unit testing:
+            - test cases are tested manually without any automated tool
+            - less reliable and time consuming
+
+Automated Unit Testing:
+            - test cases are tested using tools
+            - More reliable and faster
+
+package:
+    org.junit.Test
+
+Annotations:
+    - Syntactic meta data added to the java code or better readability and structure.
+    - Junit 4 introduced annotation
+1. @BeforeAll
+2. @BeforeClass
+3. @Before
+4. @Ignore
+5. @Test - can configure timeout, throwing exception etc..,  
+6. @After
+7. @AterClass
+8. @AterAll
