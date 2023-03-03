@@ -1,0 +1,21 @@
+Authentication - process o verifying a principal
+  - HTTP basic, digest, X509 and form-based authentication
+  - LDAP (Lightweight Directory Access Protocol) and Active Directory
+  - OpenID, OAUth, Jasig CAS and JAAS (Java Authentication and Authorization Service)
+  - Kerberos and SAML
+  
+Authorization - Determine what and what not principal can do 
+  - Access control
+  - Web request based
+  - Method Invocation
+  - Domain Object Access Control
+  
+  
+InMemoryAuthorisation - Static authentication
+BCrypt
+  
+  
+Annotations:
+1. @Coniguration
+2. @EnableWebSecurity
+3.  
