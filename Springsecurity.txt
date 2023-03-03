@@ -19,3 +19,7 @@ Annotations:
 1. @Coniguration
 2. @EnableWebSecurity
 3.  
+
+
+Access Tokens - short lived - scopes/roles 
+Refresh Token - longer-lived
