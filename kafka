@@ -1,0 +1,122 @@
+Protocol
+Data Format
+Data Schema and evolution
+
+Apache Kafka - helps decoupling data streams and systems (Transporation Mechanism  & high-throghput distributed messaging system)
+
+USe Cases:
+1. Messaging System
+2. Activity Tracking
+3. Gather metrics from different locations
+4. Application logs gathering
+5. Stream processing - Kafka Streams API or Spark
+6. decoupling system dependencies
+7. Integration with technologies like Spark, Flink, Storm, Hadoop
+
+A particular stream of data
+1. Similar to table in database without any constraints
+2. You can have as many topics as you want
+3. A topic is identified by it's name
+4. Topics are split into partitions
+    partition 0 - 0, 1, 2 
+    partition 1 - 0,
+    partition 2 - 0  
+    
+Partitions:
+1. Order of data stored is guaranteed only withina a partition and not across partitions
+2. Data is kept only for limited time (default - 1 week)
+3. Once the data is written it cannot be changed (Immutable)
+4. Data is assigned randomly to a partition unless a key is provided
+
+Topic replication:
+1. Replication factor > 1 (2 or 3 usually)
+
+Leader of partition:
+1. One broker can be the leader, serve and receive for the given partition, other brokers will synchromise the data
+
+One leader and multiple ISR (in-sync replicas)
+
+Brokers:
+
+1. Kafka cluster is composed of multiple cluster called as brokers (servers)
+2. Each broker is identified with ID. 
+3. Each broker contain certain topic partition
+4. We can connect any broker(bootstrap broker), we'll be connected to the entire cluster
+
+Producer:
+1. Producers write data to the partitions inside the topic
+2. Producers automatically knows to which broker and partition to write to 
+3. In case of Broker failure, producer will automatically recover
+4. Producers can choose to receive acknowledgement of data writes
+      acks=0; doesn't wait for acknowledgement (possible data loss)
+      acks=1; wait for teh leader to acknowledge (limited data loss)
+      acks=all; Leader + replicas acknowledgement (No data loss)
+5. Producers can choose to send key with message(string, numbers, etc..,)
+      key=null; uses roundrobin
+      key=some value; then all messages will be sent to specific partition
+      
+Consumers:
+1. read data from a topic (identified by topic name)
+2. Conumers know which broker to read from
+3. In case of Broker failure, consumer will automatically recover
+4. data will be read in order within each partition
+
+Consumer groups:
+1. Consumer read data in consumer groups
+2. Each consumer in a group read from exclusive partition
+3. If we have more consumers than partitions, some consumers will be inactive
+
+Consumers will automatically use a GroupCoordinator and a ConsumerCoordinator to assign a consumer to a partition
+
+Consumer Offsets:
+
+1. Kafka stores the offsets at which a consumer groups has been reading
+2. Ofsets commited live in a kafka topic nameed __consumer_offset
+3. When a consumer in a group has processed data received from kaka, it should be committing the offsets
+4. I a consumer dies, it'll be able to read from where it left off
+
+Delivery semantics for consumer offsets:
+1. Consumers choose when to commit offsets
+3 delivery semantics:
+  1. At most once:
+      - offsets committed as soon as the message received
+      - iff the processing goes wrong, the message will be lost
+  2. At least once:
+      - offsets commited ater the message processed
+      - if the processing goes wrong, the message will be read again
+      - chances of duplicate processing of messages - System shoud be idempotent
+  3. Exactly once:
+      - can be achieved for Kaka => kafka worklows using kafka streams API
+      - For Kaka => External System Workflows, uses an idempotent consumer
+      
+Kafka Broker Discovery: 
+
+1. Every Kafka broker is called as bootstrap server
+2. each broker knows about all brokers, topics and partitions
+
+
+Zookeeper:
+
+1. Manages brokers (keep a list of them)
+2. Zookeeper helps in leader election for partitions
+3. sends notifications to kafka in case of changes (new topic, broker dies, recovers, deleted topics etc..,)
+
+Zookeeper by design operates with odd number of servers (1,3,5,7)
+Zookeeper has a leader(handles writes) the rest are followers(handles reads)
+Zookeeper does not store consumer offsets with kafka > v0.10
+
+
+Kafka Guarantees:
+1. Messages are appended to a topic in the order they are sent
+2. Consumers read messages in the order stored in a topic-partition
+3. With replication factor of partitions N. producers and consumers can handle N-1 being down 
+4. As long as the number of partitions remains constant for a topic, the same key will always go to the same position
+
+
+Roundup:
+
+Kafka clusters - brokers -> topic --> multiple partition 
+      producers/consumer=>brokers
+      Zookeeper => brokers
+      
+      
