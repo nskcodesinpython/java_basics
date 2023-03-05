@@ -120,6 +120,14 @@ Kafka clusters - brokers -> topic --> multiple partition
       Zookeeper => brokers
       
       
+start zookeeper:
+
+zookeeper-server-start.bat ../../config/zookeeper.properties
+
+start server:
+
+kafka-server-start.bat ..\..\config\server.properties
+      
       
 Creating a topic in kafka:
 
