@@ -120,3 +120,36 @@ Kafka clusters - brokers -> topic --> multiple partition
       Zookeeper => brokers
       
       
+      
+Creating a topic in kafka:
+
+kafka-topics --create --topic first_topic --bootstrap-server localhost:9092 --replication-factor 1 --partitions 4
+
+List topic:
+kafka-topics --list --bootstrap-server localhost:9092
+
+Describe a topic:
+kafka-topics --topic first_topic --describe --bootstrap-server localhost:9092
+
+Send message to a topic via broker:
+
+kafka-console-producer --broker-list localhost:9092 --topic --first_topic --producer-property acks=all
+
+Reading message:
+
+kafka-console-consumer --topic --first_topic --bootstrap-server localhost:9092 --from-beginning
+
+Creating consumers as a group and reading the message:
+
+kafka-console-consumer --topic --first_topic --bootstrap-server localhost:9092 --from-beginning --group my-irst-application
+
+Consumer groups setting:
+
+kafka-consumer-groups --bootstrap-server localhost:9092 --list
+
+Resetting offsets:
+
+kafka-consumer-groups --bootstrap-server localhost:9092 --reset-offsets --group my-irst-application --topic --first-topic --execute --to-earliest
+
+--shift-to number 
+
