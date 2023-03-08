@@ -1,0 +1,17 @@
+Streams:
+
+Arrays.stream(arr)
+list.stream()
+Stream.of
+
+.map(item -> {
+
+})
+.filter(item -> {
+
+})
+.sorted()
+.collect(Collectors.toList())
+.forEach(item -> {
+
+})
