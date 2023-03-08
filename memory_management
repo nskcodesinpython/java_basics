@@ -1,0 +1,16 @@
+1. Class Area
+2. Heap
+3. Stack
+4. Program Counter Register
+5. Native Method Stack Memory
+
+Stack Memory:
+1. Used or executing methods
+2. Contains primitives and object references of a method in stack
+3. Object itself will be stored in heap
+4. Diferent blocks for every method. Once it's done, block will be deleted 
+
+Heap memory:
+1. Holds all the object in the application
+2. Accessible from everywhere in the application using the address of the object(reference)
+3. Objects on the heap contains primitive values and refferences to other objects on the heap
